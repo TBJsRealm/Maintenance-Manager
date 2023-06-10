@@ -1,0 +1,13 @@
+C:\Users\hoppet\source\repos\Maintenance Manager\Maintenance Manager\bin\Debug\Maintenance Manager.exe.config
+C:\Users\hoppet\source\repos\Maintenance Manager\Maintenance Manager\bin\Debug\Maintenance Manager.exe
+C:\Users\hoppet\source\repos\Maintenance Manager\Maintenance Manager\bin\Debug\Maintenance Manager.pdb
+C:\Users\hoppet\source\repos\Maintenance Manager\Maintenance Manager\obj\Debug\Maintenance Manager.csproj.AssemblyReference.cache
+C:\Users\hoppet\source\repos\Maintenance Manager\Maintenance Manager\obj\Debug\Maintenance_Manager.Properties.Resources.resources
+C:\Users\hoppet\source\repos\Maintenance Manager\Maintenance Manager\obj\Debug\Maintenance Manager.csproj.GenerateResource.cache
+C:\Users\hoppet\source\repos\Maintenance Manager\Maintenance Manager\obj\Debug\Maintenance Manager.csproj.CoreCompileInputs.cache
+C:\Users\hoppet\source\repos\Maintenance Manager\Maintenance Manager\obj\Debug\Maintenance Manager.exe
+C:\Users\hoppet\source\repos\Maintenance Manager\Maintenance Manager\obj\Debug\Maintenance Manager.pdb
+C:\Users\hoppet\source\repos\Maintenance Manager\Maintenance Manager\obj\Debug\Maintenance_Manager.LoginForm.resources
+C:\Users\hoppet\source\repos\Maintenance Manager\Maintenance Manager\obj\Debug\Maintenance_Manager.ViewDataForm.resources
+C:\Users\hoppet\source\repos\Maintenance Manager\Maintenance Manager\obj\Debug\Maintenance_Manager.AHomePageForm.resources
+C:\Users\hoppet\source\repos\Maintenance Manager\Maintenance Manager\obj\Debug\Maintenance_Manager.WHomePageForm.resources
