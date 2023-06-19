@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Maintenance_Manager
 {
-    public partial class Form1 : Form
+    public partial class WHomePageForm : Form
     {
-        public Form1()
+        public WHomePageForm()
         {
             InitializeComponent();
         }
