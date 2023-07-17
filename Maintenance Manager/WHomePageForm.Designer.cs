@@ -35,7 +35,7 @@ namespace Maintenance_Manager
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(110, 191);
+            this.button1.Location = new System.Drawing.Point(168, 233);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 75);
             this.button1.TabIndex = 0;
@@ -44,7 +44,7 @@ namespace Maintenance_Manager
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(121, 325);
+            this.button2.Location = new System.Drawing.Point(179, 471);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(109, 52);
             this.button2.TabIndex = 1;
@@ -55,7 +55,7 @@ namespace Maintenance_Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 584);
+            this.ClientSize = new System.Drawing.Size(458, 744);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "WHomePageForm";

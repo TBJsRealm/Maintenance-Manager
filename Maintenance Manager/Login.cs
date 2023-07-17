@@ -22,7 +22,7 @@ namespace Maintenance_Manager
         }
         User[] users;
 
-        class Report
+        public class Report
         {
             public string Title;
             public string Name;
@@ -30,8 +30,9 @@ namespace Maintenance_Manager
             public string Description;
             public int Priority;
             public DateTime Date;
+            public string Status;
         }
-        Report[] reports;
+        public static Report[] reports;
 
         public LoginForm()
         {
@@ -70,8 +71,10 @@ namespace Maintenance_Manager
                 theReport.Description = lineItems1[1];
                 theReport.Priority = Convert.ToInt32(lineItems3[1]);
                 theReport.Date = Convert.ToDateTime(lineItems1[3]);
+                theReport.Status = lineItems1[4];
                 reports[i - 1] = theReport;
             }
+            
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -79,6 +82,7 @@ namespace Maintenance_Manager
             string username = txtBxUsername.Text;
             string password = txtBxPassword.Text;
             int index = LoginVerify(username,password,users);
+            /*
             if (index != -1)
             {
                 if (users[index].userClass == "Admin")
@@ -97,7 +101,11 @@ namespace Maintenance_Manager
             {
                 MessageBox.Show("Username or Password is incorrect");
             }
-            
+            */
+            //temp to skp login process for testing display next form 
+            AHomePageForm Home = new AHomePageForm();
+            Home.Show();
+            this.Hide();
         }
 
         int LoginVerify(string uName, string pWord, User[] users)

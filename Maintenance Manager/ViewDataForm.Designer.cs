@@ -30,65 +30,34 @@ namespace Maintenance_Manager
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridAReports = new System.Windows.Forms.DataGridView();
+            this.viewDataFormBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.viewDataFormBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.viewDataFormBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.viewDataFormBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewDataFormBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewDataFormBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridAReports
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridAReports.AllowUserToAddRows = false;
+            this.dataGridAReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridAReports.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 30);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(314, 329);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Title";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Status";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.HeaderText = "Priority";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.HeaderText = "Data";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.dataGridAReports.Location = new System.Drawing.Point(12, 32);
+            this.dataGridAReports.Name = "dataGridAReports";
+            this.dataGridAReports.RowHeadersWidth = 62;
+            this.dataGridAReports.RowTemplate.Height = 28;
+            this.dataGridAReports.Size = new System.Drawing.Size(434, 700);
+            this.dataGridAReports.TabIndex = 0;
+            this.dataGridAReports.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAReports_CellContentClick);
             // 
             // viewDataFormBindingSource
             // 
@@ -98,17 +67,53 @@ namespace Maintenance_Manager
             // 
             this.viewDataFormBindingSource1.DataSource = typeof(Maintenance_Manager.ViewDataForm);
             // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.FillWeight = 180F;
+            this.Column1.HeaderText = "Title";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.FillWeight = 120F;
+            this.Column2.HeaderText = "Status";
+            this.Column2.MinimumWidth = 8;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.FillWeight = 80F;
+            this.Column3.HeaderText = "Priority";
+            this.Column3.MinimumWidth = 8;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.FillWeight = 110F;
+            this.Column4.HeaderText = "Date";
+            this.Column4.MinimumWidth = 8;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
             // ViewDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 584);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(458, 744);
+            this.Controls.Add(this.dataGridAReports);
             this.Name = "ViewDataForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewDataForm";
             this.Load += new System.EventHandler(this.ViewDataForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAReports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewDataFormBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewDataFormBindingSource1)).EndInit();
             this.ResumeLayout(false);
@@ -117,12 +122,12 @@ namespace Maintenance_Manager
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridAReports;
+        private System.Windows.Forms.BindingSource viewDataFormBindingSource;
+        private System.Windows.Forms.BindingSource viewDataFormBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.BindingSource viewDataFormBindingSource;
-        private System.Windows.Forms.BindingSource viewDataFormBindingSource1;
     }
 }

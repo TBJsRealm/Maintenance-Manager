@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditReport.Designer.cs">
+      <DependentUpon>EditReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     <Compile Include="WHomePageForm.Designer.cs">
       <DependentUpon>WHomePageForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EditReport.resx">
+      <DependentUpon>EditReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

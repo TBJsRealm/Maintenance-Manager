@@ -34,7 +34,7 @@ namespace Maintenance_Manager
             // 
             // btnViewReports
             // 
-            this.btnViewReports.Location = new System.Drawing.Point(116, 286);
+            this.btnViewReports.Location = new System.Drawing.Point(174, 425);
             this.btnViewReports.Name = "btnViewReports";
             this.btnViewReports.Size = new System.Drawing.Size(102, 61);
             this.btnViewReports.TabIndex = 0;
@@ -46,7 +46,7 @@ namespace Maintenance_Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 584);
+            this.ClientSize = new System.Drawing.Size(458, 744);
             this.Controls.Add(this.btnViewReports);
             this.Name = "AHomePageForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

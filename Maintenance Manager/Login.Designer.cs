@@ -36,7 +36,7 @@ namespace Maintenance_Manager
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(74, 405);
+            this.btnLogin.Location = new System.Drawing.Point(137, 485);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(196, 75);
             this.btnLogin.TabIndex = 0;
@@ -46,14 +46,14 @@ namespace Maintenance_Manager
             // 
             // txtBxUsername
             // 
-            this.txtBxUsername.Location = new System.Drawing.Point(107, 137);
+            this.txtBxUsername.Location = new System.Drawing.Point(170, 163);
             this.txtBxUsername.Name = "txtBxUsername";
             this.txtBxUsername.Size = new System.Drawing.Size(125, 26);
             this.txtBxUsername.TabIndex = 1;
             // 
             // txtBxPassword
             // 
-            this.txtBxPassword.Location = new System.Drawing.Point(107, 289);
+            this.txtBxPassword.Location = new System.Drawing.Point(170, 323);
             this.txtBxPassword.Name = "txtBxPassword";
             this.txtBxPassword.Size = new System.Drawing.Size(125, 26);
             this.txtBxPassword.TabIndex = 2;
@@ -62,7 +62,7 @@ namespace Maintenance_Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 584);
+            this.ClientSize = new System.Drawing.Size(458, 744);
             this.Controls.Add(this.txtBxPassword);
             this.Controls.Add(this.txtBxUsername);
             this.Controls.Add(this.btnLogin);

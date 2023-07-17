@@ -26,7 +26,7 @@ namespace Maintenance_Manager
         {
             ViewDataForm ViewForm = new ViewDataForm();
             ViewForm.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }
