@@ -19,8 +19,9 @@ namespace Maintenance_Manager
             public string name;
             public string password;
             public string userClass;
+            public string ID;
         }
-        User[] users;
+        public static User[] users;
 
         public class Report
         {
@@ -33,6 +34,10 @@ namespace Maintenance_Manager
             public string Status;
         }
         public static Report[] reports;
+
+        //user id if worker
+        public static string UserID;
+        public static string UserName;
 
         public LoginForm()
         {
@@ -52,29 +57,12 @@ namespace Maintenance_Manager
                 theUser.name = lineItems[0];
                 theUser.password = lineItems[1];
                 theUser.userClass = lineItems[2];
+                theUser.ID = lineItems[3];
                 users[i - 1] = theUser;
             }
 
-            //get the reports data from file
-            lines = File.ReadAllLines("ALLReports.csv");
-            reports = new Report[lines.Length - 1];
-            for (int i = 1; i < lines.Length; i++)
-            {
-                string theLine = lines[i];
-                string[] lineItems1 = theLine.Split('"');
-                string[] lineItems2 = lineItems1[0].Split(',');
-                string[] lineItems3 = lineItems1[2].Split(',');
-                Report theReport = new Report();
-                theReport.Title = lineItems2[0];
-                theReport.Name = lineItems2[1];
-                theReport.ID = lineItems2[2];
-                theReport.Description = lineItems1[1];
-                theReport.Priority = Convert.ToInt32(lineItems3[1]);
-                theReport.Date = Convert.ToDateTime(lineItems1[3]);
-                theReport.Status = lineItems1[4];
-                reports[i - 1] = theReport;
-            }
-            
+            //read file
+            ReadData();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -82,30 +70,32 @@ namespace Maintenance_Manager
             string username = txtBxUsername.Text;
             string password = txtBxPassword.Text;
             int index = LoginVerify(username,password,users);
-            /*
+            
             if (index != -1)
             {
                 if (users[index].userClass == "Admin")
                 {
+                    AHomePageForm.Admin = true;
                     //display next form
                     AHomePageForm Home = new AHomePageForm();
                     Home.Show();
+                    this.Hide();
                 }
                 else
                 {
+                    AHomePageForm.Admin = false;
+                    UserID = users[index].ID;
+                    UserName = users[index].name;
                     WHomePageForm Home = new WHomePageForm();
                     Home.Show();
+                    this.Hide();
                 }
             }
             else
             {
                 MessageBox.Show("Username or Password is incorrect");
             }
-            */
-            //temp to skp login process for testing display next form 
-            AHomePageForm Home = new AHomePageForm();
-            Home.Show();
-            this.Hide();
+            
         }
 
         int LoginVerify(string uName, string pWord, User[] users)
@@ -129,6 +119,32 @@ namespace Maintenance_Manager
             }
             //if username does not exist in system
             return -1;
+        }
+
+
+        public static void ReadData()
+        {
+
+            //get the reports data from file
+            string[] lines = File.ReadAllLines("ALLReports.csv");
+            reports = new Report[lines.Length - 1];
+            for (int i = 1; i < lines.Length; i++)
+            {
+                string theLine = lines[i];
+                string[] lineItems1 = theLine.Split('"');
+                string[] lineItems2 = lineItems1[0].Split(',');
+                string[] lineItems3 = lineItems1[2].Split(',');
+                Report theReport = new Report();
+                theReport.Title = lineItems2[0];
+                theReport.Name = lineItems2[1];
+                theReport.ID = lineItems2[2];
+                theReport.Description = lineItems1[1];
+                theReport.Priority = Convert.ToInt32(lineItems3[1]);
+                theReport.Date = Convert.ToDateTime(lineItems1[3]);
+                string[] status = lineItems1[4].Split(',');
+                theReport.Status = status[1];
+                reports[i - 1] = theReport;
+            }
         }
     }
 

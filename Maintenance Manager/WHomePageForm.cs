@@ -16,5 +16,32 @@ namespace Maintenance_Manager
         {
             InitializeComponent();
         }
+
+        private void WHomePageForm_Load(object sender, EventArgs e)
+        {
+            lblUsername.Text = LoginForm.UserName;
+            lblID.Text = "ID: " + LoginForm.UserID;
+        }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            ViewDataForm ViewForm = new ViewDataForm();
+            ViewForm.Show();
+            this.Close();
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            CreateReportForm CreateForm = new CreateReportForm();
+            CreateForm.Show();
+            this.Close();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            LoginForm Login = new LoginForm();
+            Login.Show();
+            this.Close();
+        }
     }
 }

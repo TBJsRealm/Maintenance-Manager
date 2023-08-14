@@ -69,7 +69,7 @@ namespace Maintenance_Manager
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(59, 523);
+            this.lblStatus.Location = new System.Drawing.Point(83, 613);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(67, 20);
             this.lblStatus.TabIndex = 2;
@@ -77,12 +77,13 @@ namespace Maintenance_Manager
             // 
             // cmbBxStatus
             // 
+            this.cmbBxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBxStatus.FormattingEnabled = true;
             this.cmbBxStatus.Items.AddRange(new object[] {
-            ",Reported",
-            ",In Progress",
-            ",Resovled"});
-            this.cmbBxStatus.Location = new System.Drawing.Point(153, 520);
+            "Reported",
+            "In Progress",
+            "Resovled"});
+            this.cmbBxStatus.Location = new System.Drawing.Point(244, 610);
             this.cmbBxStatus.Name = "cmbBxStatus";
             this.cmbBxStatus.Size = new System.Drawing.Size(121, 28);
             this.cmbBxStatus.TabIndex = 3;
@@ -115,14 +116,14 @@ namespace Maintenance_Manager
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(175, 34);
             this.homeToolStripMenuItem.Text = "Home";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(175, 34);
             this.reportsToolStripMenuItem.Text = "Reports";
             this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
             // 

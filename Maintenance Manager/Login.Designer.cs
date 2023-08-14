@@ -32,6 +32,9 @@ namespace Maintenance_Manager
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtBxUsername = new System.Windows.Forms.TextBox();
             this.txtBxPassword = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -58,11 +61,44 @@ namespace Maintenance_Manager
             this.txtBxPassword.Size = new System.Drawing.Size(125, 26);
             this.txtBxPassword.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(166, 140);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "UserName :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(166, 300);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Password :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(55, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(353, 37);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Maintenance Manager";
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(458, 744);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBxPassword);
             this.Controls.Add(this.txtBxUsername);
             this.Controls.Add(this.btnLogin);
@@ -80,6 +116,9 @@ namespace Maintenance_Manager
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox txtBxUsername;
         private System.Windows.Forms.TextBox txtBxPassword;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

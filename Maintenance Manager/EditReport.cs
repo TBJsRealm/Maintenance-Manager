@@ -35,10 +35,11 @@ namespace Maintenance_Manager
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SaveStatus();
+
             AHomePageForm Home = new AHomePageForm();
             Home.Show();
             this.Close();
-            SaveStatus();
 
             //to show that its saved
             MessageBox.Show("saved");
@@ -46,10 +47,11 @@ namespace Maintenance_Manager
 
         private void reportsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SaveStatus();
+
             ViewDataForm ViewForm = new ViewDataForm();
             ViewForm.Show();
             this.Close();
-            SaveStatus();
             //to show that its saved
             MessageBox.Show("saved");
         }
@@ -59,8 +61,8 @@ namespace Maintenance_Manager
             //get the changed status
             status = cmbBxStatus.SelectedItem.ToString();
 
-            //file name ("AllReports.csv")
-            var file = "AllReports.csv";
+            //file name ("AllReportTest.csv")
+            var file = "AllReportsTest2.csv";
 
             using (var stream = File.CreateText(file))
             {
@@ -71,11 +73,11 @@ namespace Maintenance_Manager
                         string title = LoginForm.reports[i].Title.ToString();
                         string name = LoginForm.reports[i].Name.ToString();
                         string id = LoginForm.reports[i].ID.ToString();
-                        string description = LoginForm.reports[i].Description.ToString();
+                        string description = "\"" + LoginForm.reports[i].Description.ToString() + "\"";
                         string urgency = LoginForm.reports[i].Priority.ToString();
-                        string date = LoginForm.reports[i].Date.ToString();
+                        string date = "\"" + (LoginForm.reports[i].Date).Date.ToString("dd/MM/yyyy") + "\"";
                         string stat = status;
-                        string csvRow = string.Format("{0},{1},{2},{3},{4},{5},{6}", title, name, id, description, urgency, date, status);
+                        string csvRow = string.Format("{0},{1},{2},{3},{4},{5},{6}", title, name, id, description, urgency, date, stat);
                         stream.WriteLine(csvRow);
                     }
                     else
@@ -83,11 +85,11 @@ namespace Maintenance_Manager
                         string title = LoginForm.reports[i].Title.ToString();
                         string name = LoginForm.reports[i].Name.ToString();
                         string id = LoginForm.reports[i].ID.ToString();
-                        string description = LoginForm.reports[i].Description.ToString();
+                        string description = "\"" + LoginForm.reports[i].Description.ToString() + "\"";
                         string urgency = LoginForm.reports[i].Priority.ToString();
-                        string date = LoginForm.reports[i].Date.ToString();
+                        string date = "\"" + (LoginForm.reports[i].Date).Date.ToString("dd/MM/yyyy") + "\"";
                         string stat = LoginForm.reports[i].Status.ToString();
-                        string csvRow = string.Format("{0},{1},{2},{3},{4},{5},{6}", title, name, id, description, urgency, date, status);
+                        string csvRow = string.Format("{0},{1},{2},{3},{4},{5},{6}", title, name, id, description, urgency, date, stat);
                         stream.WriteLine(csvRow);
                     }
 

@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace Maintenance_Manager
 {
+   
     public partial class AHomePageForm : Form
     {
+        public static bool Admin;
         public AHomePageForm()
         {
             InitializeComponent();
@@ -26,6 +28,13 @@ namespace Maintenance_Manager
         {
             ViewDataForm ViewForm = new ViewDataForm();
             ViewForm.Show();
+            this.Close();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            LoginForm Login = new LoginForm();
+            Login.Show();
             this.Close();
         }
     }
