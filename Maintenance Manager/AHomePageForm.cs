@@ -13,7 +13,9 @@ namespace Maintenance_Manager
    
     public partial class AHomePageForm : Form
     {
+        //states that the user is an admin for checking
         public static bool Admin;
+
         public AHomePageForm()
         {
             InitializeComponent();
@@ -27,9 +29,10 @@ namespace Maintenance_Manager
             lblID.Text = "ID: " + LoginForm.UserID;
         }
 
-
+        //called when view reports button is pressed
         private void btnViewReports_Click(object sender, EventArgs e)
         {
+            //loads view reports form and closes current form
             ViewDataForm ViewForm = new ViewDataForm();
             ViewForm.Show();
             this.Close();
@@ -37,6 +40,7 @@ namespace Maintenance_Manager
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+            //loads login form and closes current form
             LoginForm Login = new LoginForm();
             Login.Show();
             this.Close();
