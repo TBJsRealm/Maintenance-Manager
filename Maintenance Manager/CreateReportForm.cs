@@ -73,11 +73,14 @@ namespace Maintenance_Manager
             cmbBxPriority.SelectedIndex = 2;
         }
 
+        //function to save report when called
+        //saves report into file
         public void SaveStatus()
         {
             //file name ("AllReports.csv")
             var file = "AllReports.csv";
 
+            //rewrite the file with added form
             using (var stream = File.CreateText(file))
             {
                 for (int i = 0; i < LoginForm.reports.Length + 1; i++)
@@ -106,11 +109,12 @@ namespace Maintenance_Manager
                         string csvRow = string.Format("{0},{1},{2},{3},{4},{5},{6}", title, name, id, description, urgency, date, stat);
                         stream.WriteLine(csvRow);
                     }
-
                 }
             }
         }
 
+        //called the a keypress occurs in the description text box
+        //stops the input of "
         private void txtBxDescription_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '"')
@@ -119,6 +123,8 @@ namespace Maintenance_Manager
             }
         }
 
+        //called the a keypress occurs in the title text box
+        //stops the input of "
         private void txtBxTitle_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '"')
