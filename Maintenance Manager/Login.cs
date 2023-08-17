@@ -14,6 +14,7 @@ namespace Maintenance_Manager
 
     public partial class LoginForm : Form
     {
+        //class to store all users details
         public class User
         {
             public string name;
@@ -21,8 +22,10 @@ namespace Maintenance_Manager
             public string userClass;
             public string ID;
         }
+        //array that stores every user
         public static User[] users;
 
+        //class to store all report data
         public class Report
         {
             public string Title;
@@ -33,6 +36,8 @@ namespace Maintenance_Manager
             public DateTime Date;
             public string Status;
         }
+
+        //array of reports in the system
         public static Report[] reports;
 
         //user id if worker
@@ -43,7 +48,7 @@ namespace Maintenance_Manager
         {
             InitializeComponent();
         }
-
+        //called when the form loads
         private void LoginForm_Load(object sender, EventArgs e)
         {
             // Read a text file line by line.
@@ -51,6 +56,7 @@ namespace Maintenance_Manager
             users = new User[lines.Length - 1];
             for (int i = 1; i < lines.Length; i++)
             {
+                //parse and store all user details into user class then into array of users
                 string theLine = lines[i];
                 string[] lineItems = theLine.Split(',');
                 User theUser = new User();
@@ -61,14 +67,17 @@ namespace Maintenance_Manager
                 users[i - 1] = theUser;
             }
 
-            //read file
+            //read the file
             ReadData();
         }
 
+        //called when the login button is pressed which will then verify deatails then go to respective form
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtBxUsername.Text;
             string password = txtBxPassword.Text;
+
+            //get the index of where the user is in the array
             int index = LoginVerify(username,password,users);
             
             if (index != -1)
@@ -76,13 +85,14 @@ namespace Maintenance_Manager
                 if (users[index].userClass == "Admin")
                 {
                     AHomePageForm.Admin = true;
-                    //display next form
+                    //display admin form and hides current form
                     AHomePageForm Home = new AHomePageForm();
                     Home.Show();
                     this.Hide();
                 }
                 else
                 {
+                    //if user isnt an admin then open the worker home ppage form
                     AHomePageForm.Admin = false;
                     UserID = users[index].ID;
                     UserName = users[index].name;
@@ -93,11 +103,13 @@ namespace Maintenance_Manager
             }
             else
             {
+                //display messagebox if username and password dont match in system
                 MessageBox.Show("Username or Password is incorrect");
             }
             
         }
 
+        //gets the index of the user if details match otherwise return -1
         int LoginVerify(string uName, string pWord, User[] users)
         {
             //compare all usernames in system
@@ -121,7 +133,7 @@ namespace Maintenance_Manager
             return -1;
         }
 
-
+        //reads the file of reports
         public static void ReadData()
         {
 
