@@ -19,10 +19,14 @@ namespace Maintenance_Manager
             InitializeComponent();
         }
 
+        //called when homepafe form is loaded
         private void HomePageForm_Load(object sender, EventArgs e)
         {
-
+            //set the display labels
+            lblUsername.Text = LoginForm.UserName;
+            lblID.Text = "ID: " + LoginForm.UserID;
         }
+
 
         private void btnViewReports_Click(object sender, EventArgs e)
         {
