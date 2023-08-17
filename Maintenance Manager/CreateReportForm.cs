@@ -17,13 +17,14 @@ namespace Maintenance_Manager
         {
             InitializeComponent();
         }
-        public static int index;
 
+        //called when tool strp (home) is pressed
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //save the report
+            //attempt to save the report if all fields have inputs
             if (txtBxDescription.Text != "" && txtBxTitle.Text != "")
             {
+                //call save function
                 SaveStatus();
 
                 //go back to the home page
@@ -36,37 +37,40 @@ namespace Maintenance_Manager
             }
             else
             {
+                //display to the user that not all fields have an input
                 MessageBox.Show("Please fill in all fields");
             }
-
         }
 
+        //called when the tool strip (reports) is pressed
         private void reportsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //save the report
             if (txtBxDescription.Text != "" && txtBxTitle.Text != "")
             {
+                //call the save function
                 SaveStatus();
 
                 //go to view data form
                 ViewDataForm ViewForm = new ViewDataForm();
                 ViewForm.Show();
                 this.Close();
+
                 //to show that its saved
                 MessageBox.Show("saved");
             }
             else
             {
+                //display to the user that not all the fields have been filled in
                 MessageBox.Show("Please fill in all fields");
             }
-
         }
 
+        //called when the form is loaded
         private void CreateReportForm_Load(object sender, EventArgs e)
         {
+            //set the index of the priority combo box
             cmbBxPriority.SelectedIndex = 2;
-            index = ViewDataForm.index;
-
         }
 
         public void SaveStatus()
