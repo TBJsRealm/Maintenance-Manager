@@ -18,8 +18,11 @@ namespace Maintenance_Manager
             InitializeComponent();
         }
 
+        //set the status and index as a static
         public static string status;
         public static int index;
+
+        //called when form is loaded
         private void EditReport_Load(object sender, EventArgs e)
         {
             //get data to put into form
@@ -28,15 +31,19 @@ namespace Maintenance_Manager
             string description = LoginForm.reports[index].Description.ToString();
             status = LoginForm.reports[index].Status.ToString();
 
+            //set labels
             lblTitle.Text = title;
             lblDescription.Text = description;
             cmbBxStatus.SelectedItem = status;
         }
 
+        //called when the tool strip (home) is pressed
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //call the save function
             SaveStatus();
 
+            //load the admin home page form and close current form
             AHomePageForm Home = new AHomePageForm();
             Home.Show();
             this.Close();
@@ -44,18 +51,24 @@ namespace Maintenance_Manager
             //to show that its saved
             MessageBox.Show("saved");
         }
-
+        
+        //called whe the tool strip (reports) is pressed
         private void reportsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //call the save function
             SaveStatus();
 
+            //load the view reports form and close current form
             ViewDataForm ViewForm = new ViewDataForm();
             ViewForm.Show();
             this.Close();
+
             //to show that its saved
             MessageBox.Show("saved");
         }
 
+        //function that can be called
+        //saves edited report/new report into the file
         public void SaveStatus()
         {
             //get the changed status
@@ -64,10 +77,12 @@ namespace Maintenance_Manager
             //file name ("AllReportTest.csv")
             var file = "AllReportsTest2.csv";
 
+            //rewrite the file
             using (var stream = File.CreateText(file))
             {
                 for (int i = 0; i < LoginForm.reports.Count(); i++)
                 {
+                    //when the index matches the reports' index
                     if (i == index)
                     {
                         string title = LoginForm.reports[i].Title.ToString();
@@ -80,6 +95,7 @@ namespace Maintenance_Manager
                         string csvRow = string.Format("{0},{1},{2},{3},{4},{5},{6}", title, name, id, description, urgency, date, stat);
                         stream.WriteLine(csvRow);
                     }
+                    //if the index isnt the reports'
                     else
                     {
                         string title = LoginForm.reports[i].Title.ToString();
